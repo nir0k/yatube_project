@@ -2,14 +2,14 @@
 <html lang="ru"> <!-- Язык сайта - русский -->
 {% extends 'base.html' %}
 {% block title %}
-      <title>{{ group.title }}</title>
+      <title>{{ title }}</title>
 {% endblock %}
 {% block content %}
   <!-- класс py-5 создает отступы сверху и снизу блока -->
   <div class="container py-5">
-    <h1>{{ group.title }}</h1>
+    <h1>{{ title }}</h1>
     <p>
-      Группа тайных поклонников графа.
+      {{ group.title }}
     </p>
     <article>
       {% for post in posts %}

@@ -5,9 +5,11 @@ from .models import Post, Group
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
+    title = f'Записи сообщества {group}'
     template = 'posts/group_list.html'
-    posts = Post.objects.filter(group=group).order_by('-pub_date')
+    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
     context = {
+        'title': title,
         'group': group,
         'posts': posts,
     }
@@ -16,7 +18,7 @@ def group_posts(request, slug):
 
 def index(request):
     template = 'posts/index.html'
-    title = 'Это главная страница проекта Yatube'
+    title = 'Последние обновления на сайте'
     posts = Post.objects.order_by('-pub_date')[:10]
     context = {
         'title': title,
