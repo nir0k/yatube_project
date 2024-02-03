@@ -1,7 +1,5 @@
 # Yatube Project
 
-# Yatube Project
-
 Welcome to the Yatube Project, a social network for writers to share their original content. This README is available in multiple languages:
 
 - [English](README.md)
